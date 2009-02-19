@@ -1,0 +1,15 @@
+;;;; -*- Mode: LISP; Syntax: COMMON-LISP; indent-tabs-mode: nil -*-
+;;;  $Id$
+
+;(load (merge-pathnames "local/share/common-lisp/source/asdf/asdf.lisp" (user-homedir-pathname)))
+;(compile-file (merge-pathnames "local/share/common-lisp/source/asdf/asdf.lisp" (user-homedir-pathname)))
+(require :asdf)
+(push (merge-pathnames "local/share/common-lisp/systems/" (user-homedir-pathname)) asdf:*central-registry*)
+
+(compile-file (merge-pathnames "local/share/common-lisp/source/asdf-addons/asdf-cache.lisp" (user-homedir-pathname)))
+(load (merge-pathnames "local/share/common-lisp/source/asdf-addons/asdf-cache" (user-homedir-pathname)))
+(setf asdf-cache:*asdf-cache* (merge-pathnames "local/var/cache/common-lisp/" (user-homedir-pathname)))
+
+(asdf:oos 'asdf:load-op :swank)
+
+#+sbcl (setq sb-impl::*default-external-format* :utf-8)

@@ -1,0 +1,7 @@
+defencoding eucJP
+defencoding utf-8
+encoding utf-8 utf-8
+escape ^z^z
+vbell off
+hardstatus alwayslastline "%w"
+startup_message off
