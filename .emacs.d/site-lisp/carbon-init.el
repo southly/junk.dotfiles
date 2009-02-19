@@ -3,6 +3,7 @@
 (tool-bar-mode -1)
 (setq mac-command-key-is-meta nil)
 (setq mac-option-modifier 'meta)
+(add-to-list 'default-frame-alist '(alpha . 85))
 ;;;
 ;;;
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/w3m/")
@@ -73,5 +74,6 @@
                                    (ecl   ("ecl") :coding-system utf-8-unix)
                                    (cmucl ("cmucl") :coding-system nil)))
 (setq slime-default-lisp 'sbcl)
+(setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
 ;; (setq slime-net-coding-system 'utf-8-unix)
 (setq common-lisp-hyperspec-root "/opt/local/share/doc/lisp/HyperSpec-7-0/HyperSpec/")
