@@ -4,6 +4,8 @@
 (setq mac-command-key-is-meta nil)
 (setq mac-option-modifier 'meta)
 (add-to-list 'default-frame-alist '(alpha . 85))
+(mac-set-input-method-parameter 'roman 'cursor-color "dim gray")
+(mac-set-input-method-parameter 'japanese 'cursor-color "tomato")
 ;;;
 ;;;
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/w3m/")
@@ -75,5 +77,6 @@
                                    (cmucl ("cmucl") :coding-system nil)))
 (setq slime-default-lisp 'sbcl)
 (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
+(global-set-key [?\C-c ?s] 'slime-selector)
 ;; (setq slime-net-coding-system 'utf-8-unix)
 (setq common-lisp-hyperspec-root "/opt/local/share/doc/lisp/HyperSpec-7-0/HyperSpec/")

@@ -6,8 +6,9 @@
 (setq make-backup-files nil)
 (setq truncate-partial-width-windows t)
 (setq-default truncate-lines t)
-(line-number-mode 1)
-(column-number-mode 1)
+(line-number-mode t)
+(column-number-mode t)
+(blink-cursor-mode nil)
 (setq user-full-name "NANRI")
 (setq user-mail-address "southly@gmail.com")
 (setq-default indent-tabs-mode nil) 
@@ -22,3 +23,7 @@
        (load-library "carbon-init"))
       (t
        ))
+
+(defun insert-date ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
