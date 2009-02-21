@@ -6,6 +6,8 @@
 (add-to-list 'default-frame-alist '(alpha . 85))
 (mac-set-input-method-parameter 'roman 'cursor-color "dim gray")
 (mac-set-input-method-parameter 'japanese 'cursor-color "tomato")
+(setq browse-url-generic-program "open")
+(setq browse-url-netscape-program "open")
 ;;;
 ;;;
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp/w3m/")
