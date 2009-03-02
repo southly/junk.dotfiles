@@ -52,8 +52,6 @@
 
 ;;; SLIME 2009-02-07
 ;;;
-;; (setq inferior-lisp-program "clisp -K full -E UTF-8")
-(setq inferior-lisp-program "sbcl")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/slime/")
 (require 'slime)
 (slime-setup '(slime-fancy
@@ -75,10 +73,11 @@
                ))
 (setq slime-lisp-implementations '((sbcl  ("sbcl") :coding-system utf-8-unix)
                                    (clisp ("clisp" "-K" "full" "-E" "UTF-8") :coding-system utf-8-unix)
+                                   (ccl   ("~/local/share/common-lisp/ccl/dx86cl" "-K" "utf-8") :coding-system utf-8-unix)
                                    (ecl   ("ecl") :coding-system utf-8-unix)
                                    (cmucl ("cmucl") :coding-system nil)))
 (setq slime-default-lisp 'sbcl)
 (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
 (global-set-key [?\C-c ?s] 'slime-selector)
-;; (setq slime-net-coding-system 'utf-8-unix)
+(setq slime-net-coding-system 'utf-8-unix)
 (setq common-lisp-hyperspec-root "/opt/local/share/doc/lisp/HyperSpec-7-0/HyperSpec/")
