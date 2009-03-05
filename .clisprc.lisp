@@ -1,7 +1,10 @@
 ;;;; -*- Mode: LISP; Syntax: COMMON-LISP; indent-tabs-mode: nil -*-
 ;;;  $Id$
-(setf custom:*clhs-root-default* "file:///opt/local/share/doc/lisp/HyperSpec-7-0/HyperSpec/")
-(setf custom:*impnotes-root-default* "file:///Users/southly/local/share/common-lisp/clisp-2.43/doc/html/")
+(setf custom:*clhs-root-default*
+      "file:///opt/local/share/doc/lisp/HyperSpec-7-0/HyperSpec/")
+(setf custom:*impnotes-root-default* 
+      (format nil "file://~A" (merge-pathnames "local/share/common-lisp/clisp-2.47/doc/html/"
+                                               (user-homedir-pathname))))
 
 (compile-file (merge-pathnames "local/share/common-lisp/source/asdf/asdf.lisp" (user-homedir-pathname)))
 (load (merge-pathnames "local/share/common-lisp/source/asdf/asdf" (user-homedir-pathname)))
