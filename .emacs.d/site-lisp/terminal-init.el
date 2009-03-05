@@ -1,11 +1,5 @@
 ;;;
 ;;;
-(tool-bar-mode -1)
-(setq mac-command-key-is-meta nil)
-(setq mac-option-modifier 'meta)
-(add-to-list 'default-frame-alist '(alpha . 85))
-(mac-set-input-method-parameter 'roman 'cursor-color "dim gray")
-(mac-set-input-method-parameter 'japanese 'cursor-color "tomato")
 (setq browse-url-generic-program "open")
 (setq browse-url-netscape-program "open")
 ;;;
@@ -27,12 +21,6 @@
 (defconst *dmacro-key* [?\C-:] "dmacro key")
 (global-set-key *dmacro-key* 'dmacro-exec)
 (autoload 'dmacro-exec "dmacro" nil t)
-
-(require 'elscreen)
-(require 'elscreen-w3m)
-(if window-system
-    (define-key elscreen-map [?\C-z] 'iconify-or-deiconify-frame)
-  (define-key elscreen-map [?\C-z] 'suspend-emacs))
 
 (require 'jaspace)
 (setq jaspace-alternate-eol-string "↓\n")

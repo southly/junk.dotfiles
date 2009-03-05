@@ -24,6 +24,8 @@
        ;; for carbon emacs
        (load-library "carbon-init"))
       (t
+       ;; for terminal
+       (load-library "terminal-init")
        ))
 
 (defun insert-date ()
